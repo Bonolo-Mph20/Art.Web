@@ -214,19 +214,21 @@ header .logo
 
 @media (min-width: 475px)
 {
-  .showcase,
-  .showcase header
+  .showcase
   {
     padding: 40px;
   }
   .text h2
   {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   .text h3
   {
-    font-size: 1em;
+    font-size: 0.8em;
+  }
+  .text p
+  {
+    font-size: 0.5em;
   }
 }
-
 
