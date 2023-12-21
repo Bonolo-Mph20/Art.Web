@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Sidebar Menu | Side Navigation Bar</title>
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+
+/* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100%;
+  background: transparent;
+}
+.video{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent; /* Adjust the transparency here */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+  }
+
+  :root{
+    --x: 45deg
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0e1538;
+}
+.game{
+    position: relative;
+    width: 240px; 
+    height: 85px;
+    display: inline-block;
+    border-radius: 5px;
+    margin: 50px;
+}
+.game i{
+    position: absolute;
+    inset: -2px;
+    display: block;
+    border-radius: 5px;
+}
+.game i,a i:nth-child(2){
+    background: linear-gradient(var(--x), #00ccff, #0e1538, #0e1538, #d400d4);
+}
+.game i:nth-child(2){
+    filter: blur(10px);
+}
+.game span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: 2px;
+    border: 1px solid #040a29;
+    border-radius: 3px;
+    background: rgba(14, 21, 56, 0.65);
+    overflow: hidden;
+}
+.game span::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.075);
+    transform: skew(25deg);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: transparent;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+nav .logo {
+  display: flex;
+  align-items: center;
+  margin: 0 24px;
+}
+.logo .menu-icon {
+  color: #333;
+  font-size: 24px;
+  margin-right: 14px;
+  cursor: pointer;
+}
+.logo .logo-name {
+  color: #000;
+  font-size: 22px;
+  font-weight: 500;
+}
+nav .sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 100%;
+  width: 260px;
+  padding: 20px 0;
+  background-color: transparent;
+  box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+nav.open .sidebar {
+  left: 0;
+}
+.sidebar .sidebar-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 16px;
+}
+.sidebar-content .list {
+  list-style: none;
+}
+.list .nav-link {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  padding: 14px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.lists .nav-link:hover {
+  background-color: #4070f4;
+}
+.nav-link .icon {
+  margin-right: 14px;
+  font-size: 20px;
+  color: #000;
+}
+.nav-link .link {
+  font-size: 16px;
+  color: #000;
+  font-weight: 400;
+}
+.lists .nav-link:hover .icon,
+.lists .nav-link:hover .link {
+  color: #fff;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  height: 1000vh;
+  width: 200%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  background: rgba(0, 0, 0, 0.3);
+}
+nav.open ~ .overlay {
+  opacity: 1;
+  left: 260px;
+  pointer-events: auto;
+}
+@media (max-width: 991px) {
+  .game{
+    width: 200px;
+    height: 85px;
+    margin: 30px;
+  }
+}
+@media (max-width: 768px) {
+  .game{
+    width: 250px;
+    height: 85px;
+    margin: 10px;
+  }
+}
+
+  </style>
+  <body>
+    <video src="Video/Gaming.mp4" autoplay loop muted class="video"></video>
+
+    <div class="container">
+      <!-- Buttons -->
+      <a href="Mini Games/Tictac.html" class="game">
+        <i></i><i></i>
+        <span>Tic Tac</span>
+      </a>
+
+      <a href="Mini Games/Rock Paper Scissors/index.html" class="game">
+        <i></i><i></i>
+        <span>Rock Paper Scissors</span>
+      </a>
+
+      <a href="Mini Games/Memory Card Games/index.html" class="game">
+        <i></i><i></i>
+        <span>Memory Card Game</span>
+      </a>
+
+      <a href="Mini Games/Word Scramble Game/index.html" class="game">
+        <i></i><i></i>
+        <span>Word Scramble</span>
+      </a>
+
+    </div>
+    
+    <nav>
+      <div class="logo">
+        <i class="bx bx-menu menu-icon"></i>
+        <span class="logo-name">CodingLab</span>
+      </div>
+      <div class="sidebar">
+        <div class="logo">
+          <i class="bx bx-menu menu-icon"></i>
+          <span class="logo-name">CodingLab</span>
+        </div>
+
+        <div class="sidebar-content">
+          <ul class="lists">
+            <li class="list">
+              <a href="index.html" class="nav-link">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="link">Home</span>
+              </a>
+            </li>
+            
+            <li class="list">
+              <a href="https://mediafiles.botpress.cloud/ca8f4776-d366-4e93-b62b-009666a2b1a3/webchat/bot.html" class="nav-link">
+                <i class="bx bx-bot icon"></i>
+                <span class="link">AdviserBot</span>
+              </a>
+            </li>
+            <li class="list">
+              <a href="#" class="nav-link">
+                <i class="bx bx-book icon"></i>
+                <span class="link">About Us</span>
+              </a>
+            </li>
+            
+            <li class="list">
+              <a href="News/index.html" class="nav-link">
+                <i class="bx bx-news icon"></i>
+                <span class="link">News</span>
+              </a>
+            </li>
+
+            <li class="list">
+                <a href="game.html" class="nav-link">
+                  <i class="bx bx-game icon"></i>
+                  <span class="link">Mini Games</span>
+                </a>
+              </li>
+              <li class="list">
+                <a href="Random Quote Generator in JavaScript/index.html" class="nav-link">
+                  <i class="bx bx-message icon"></i>
+                  <span class="link">Quote Of the Day</span>
+                </a>
+                <li class="list">
+                  <a href="Quiz Game/quiz.html" class="nav-link">
+                    <i class="bx bx-game icon"></i>
+                    <span class="link">Quiz</span>
+                  </a>
+                </li>
+              </li>
+        </div>
+      </div>
+    </nav>
+
+    <section class="overlay"></section>
+
+    
+
+    <script>
+        const navBar = document.querySelector("nav"),
+       menuBtns = document.querySelectorAll(".menu-icon"),
+       overlay = document.querySelector(".overlay");
+
+     menuBtns.forEach((menuBtn) => {
+       menuBtn.addEventListener("click", () => {
+         navBar.classList.toggle("open");
+       });
+     });
+
+     overlay.addEventListener("click", () => {
+       navBar.classList.remove("open");
+     });
+     let btn = document.querySelector('a');
+        btn.addEventListener('mousemove', e =>{
+            let rect = e.target.getBoundingClientRect();
+            let x = e.clientX * 3 - rect.left;
+            btn.style.setProperty('--x', x + 'deg');
+        })
+    </script>
+  </body>
+</html>
