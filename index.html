@@ -289,6 +289,22 @@ header .logo
 </script>
 
 <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-<script src="https://mediafiles.botpress.cloud/4cdcb2d1-d84c-4439-95e7-4a07762a8262/webchat/config.js" defer></script>
+<script>
+  window.botpressWebChat.init({
+      "composerPlaceholder": "Chat with bot",
+      "botConversationDescription": "This chatbot was built surprisingly fast with Botpress",
+      "botId": "4cdcb2d1-d84c-4439-95e7-4a07762a8262",
+      "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+      "messagingUrl": "https://messaging.botpress.cloud",
+      "clientId": "4cdcb2d1-d84c-4439-95e7-4a07762a8262",
+      "webhookId": "560bd383-129f-4f49-a145-470b1735fa10",
+      "lazySocket": true,
+      "themeName": "prism",
+      "frontendVersion": "v1",
+      "showPoweredBy": true,
+      "theme": "prism",
+      "themeColor": "#2563eb"
+  });
+</script>
 
 </html>
