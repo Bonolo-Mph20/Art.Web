@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Border Loading Animaton</title>
+  </head>
+  <style>
+    /* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 100vh;
+  background-color: #131221;
+}
+body,
+.container,
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container {
+  position: relative;
+  height: 450px;
+  width: 350px;
+  border-radius: 16px;
+  background-color: #fff;
+  overflow: hidden;
+}
+.container.active {
+  background-color: #000;
+}
+.container::before {
+  content: "";
+  position: absolute;
+  height: 650px;
+  width: 650px;
+  background-image: conic-gradient(transparent, transparent, transparent, #fff);
+}
+.container.active:before {
+  animation: rotate 4s linear infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.container .overlay {
+  position: absolute;
+  height: 440px;
+  width: 340px;
+  font-size: 40px;
+  font-weight: 500;
+  color: #fff;
+  border-radius: 12px;
+  background-color: #131221;
+}
+  </style>
+  <body>
+    <div class="container active">
+      <span class="overlay" id="percent">0%</span>
+    </div>
+
+    <script>
+      const container = document.querySelector(".container"),
+        percent = document.querySelector("#percent");
+
+      let perVal = 0;
+
+      let increament = setInterval(() => {
+        perVal++;
+        percent.textContent = `${perVal}%`;
+
+        if (perVal == 100) {
+          clearInterval(increament);
+          container.classList.remove("active");
+          redirectToNextPage();
+        }
+      }, 100);
+
+      function redirectToNextPage() {
+        // Redirect to the next page
+        window.location.href = 'Facebook.html'; 
+      }
+
+    </script>
+  </body>
+</html>
